@@ -61,3 +61,4 @@ htmlcov/
 # PyCharm / JetBrains
 # =======================
 .idea/
+/p1_random.py
