@@ -9,6 +9,9 @@
 /dataSources/
 /dataSources.local.xml
 
+# personal files ignored
+M2_Demo.py
+
 # created by virtualenv automatically
 # =======================
 # Python
