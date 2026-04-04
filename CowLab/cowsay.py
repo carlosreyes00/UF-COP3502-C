@@ -1,5 +1,7 @@
 import sys
 import heifer_generator
+from dragon import Dragon
+from ice_dragon import IceDragon
 from cow import Cow
 
 """
@@ -19,6 +21,11 @@ elif sys.argv[1] == "-n":
         for item in heifer_generator.get_cows():
             if item.get_name() == sys.argv[2]:
                 print(item.get_image())
+
+                if isinstance(item, IceDragon):
+                    print("This dragon cannot breathe fire.")
+                elif isinstance(item, Dragon):
+                    print("This dragon can breathe fire.")
     else:
         print("Could not find ninja cow!")
 else:

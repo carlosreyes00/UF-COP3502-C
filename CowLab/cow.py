@@ -3,8 +3,8 @@ import heifer_generator
 class Cow:
 #Initializes a cow object with the given name and sets image to be None.
     def __init__(self, name):
-        self.image = None
         self.name = name
+        self.image = None
 
     #Returns the name of the cow. Note: the name property should NOT have a setter.
     def get_name(self):
