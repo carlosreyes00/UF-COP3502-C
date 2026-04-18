@@ -16,22 +16,53 @@ class Pattern:
                 file.write("\n")
 
 
-class Patern1(Pattern):
-    # args: Whatever arguments you want your pattern to have.
-    # Creates a pattern as a 2D list of ints from 0 to 255.
-    def __init__(self, args):
-        pass
+class SquareFrame(Pattern):
+    def __init__(self, size):
+        data = []
+        for y in range(size):
+            row = []
+            for x in range(size):
+                if x == 0 or y == 0 or x == size-1 or y == size-1:
+                    row.append(0)
+                else:
+                    row.append(255)
+            data.append(row)
 
-class Patern2(Pattern):
-    # args: Whatever arguments you want your pattern to have.
-    # Creates a pattern as a 2D list of ints from 0 to 255.
-    def __init__(self, args):
-        pass
+        super().__init__(data)
 
-class Patern3(Pattern):
-    # args: Whatever arguments you want your pattern to have.
-    # Creates a pattern as a 2D list of ints from 0 to 255.
-    def __init__(self, args):
-        pass
+# square_frame = SquareFrame(100)
+# square_frame.make_image("square_frame.pgm")
 
+class Cross(Pattern):
+    def __init__(self, size):
+        data = []
+        for y in range(size):
+            row = []
+            for x in range(size):
+                if x == size // 2 or y == size // 2:
+                    row.append(0)
+                else:
+                    row.append(255)
+            data.append(row)
 
+        super().__init__(data)
+
+# cross = Cross(100)
+# cross.make_image("cross.pgm")
+
+class AnySizeCheckersBoard(Pattern):
+    def __init__(self, size):
+        data = []
+        for y in range(size):
+            row = []
+            for x in range(size):
+                if x % 2 == 0:
+                    row.append(0 if y % 2 == 0 else 255)
+                else:
+                    row.append(255 if y % 2 == 0 else 0)
+            data.append(row)
+
+        super().__init__(data)
+
+# any_size_checkers = AnySizeCheckersBoard(100)
+# any_size_checkers.make_image("any_size_checkers.pgm")
